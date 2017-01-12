@@ -18,18 +18,7 @@ LIBDIRS= -L/Users/douggreenwald/lib
 MYSQLINC= -I/usr/local/mysql/include
 MYSQLLIBS= -L/usr/local/mysql/lib -lmysqlclient # -lz -lm
 
-SANPARSE= LoadHTC-RResp LoadHTC-RIOPs LoadHTC-RTRate \
-	LoadHTC-WResp LoadHTC-WIOPs LoadHTC-WTRate \
-	LoadHTC01-CSV
-
-Targets= FromEpoch ToEpoch LoadVXstat LoadIOstat LoadIOstat-CSV LoadVXstat-CSV \
-	LoadIOstat-CSV-TC LoadIOerrs-CSV-TC LoadVMEM-CSV-TC LoadMPstat-CSV-TC \
-	$(SANPARSE) HEXtoDEC-SA LoadProcMem-CSV-TC LoadProcCpu-CSV-TC \
-	MDay-ColorMap LoadLinuxIO-CSV-TC LoadNetstat-i-CSV-TC LoadVMstatS-CSV-TC \
-	LoadVMstatP-CSV-TC CreateIOCalc CreateVXCalcD CreateVXCalcV \
-	LoadNetstat-Lin-CSV-TC LoadIOerrs-Lin-CSV-TC LoadVMstat-Lin-CSV-TC \
-	CreateLinuxIOCalc LoadNICstat-CSV-TC CreateIOCalc-NFS CreateIOCalc-ACFS \
-	Lin-NumCPUbyServer CreateIOCalc-GDG
+Targets= FromEpoch ToEpoch HEXtoDEC-SA MDay-ColorMap Lin-NumCPUbyServer
 
 
 .c.o:
@@ -224,10 +213,9 @@ bundle:
 
 FromEpoch.o: FromEpoch.c
 ToEpoch.o: ToEpoch.c
-HEXtoDEC-SA.o: HEXtoDEC.c
+HEXtoDEC-SA.o: HEXtoDEC-SA.c
 MDay-ColorMap.o: MDay-ColorMap.c
 
-LoadVXstat.o: LoadVXstat.c /Users/douggreenwald/lib/TokenParse.o
 LoadIOstat.o: LoadIOstat.c /Users/douggreenwald/lib/TokenParse.o
 LoadNICstat-CSV-TC.o: LoadNICstat-CSV-TC.c /Users/douggreenwald/lib/TokenParse.o
 LoadIOstat-CSV.o: LoadIOstat-CSV.c /Users/douggreenwald/lib/TokenParse.o
