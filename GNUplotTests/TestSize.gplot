@@ -1,0 +1,31 @@
+set term png size 8192,4096
+set output "TestSize-8192x4096.png"
+set autoscale
+unset log
+unset label
+unset object
+set xtic auto
+set ytic auto
+set key off
+set style line 1 lc rgb "red" lw 2 pt 1
+set style line 2 lc rgb "blue" lw 2 pt 1
+set style line 3 lc rgb "#22ff44" lw 2 pt 1
+set style line 4 lc rgb "magenta" lw 2 pt 1
+set style line 5 lc rgb "plum" lw 2 pt 1
+set style line 6 lc rgb "orange" lw 2 pt 1
+set style line 7 lc rgb "purple" lw 2 pt 1
+set style line 8 lc rgb "brown" lw 2 pt 1
+
+set label "Randomly Longish Title Here" at screen 0.51,0.985 center front textcolor rgb "black" font "Arial,40"
+
+set label "20140101_XXY" at screen 0.977,0.97 front textcolor linestyle 1 font "Georgia Bold,14"
+set label "20140102_XXY" at screen 0.977,0.96 front textcolor linestyle 2 font "Georgia Bold,14"
+set multiplot
+
+set xtics format ""
+
+set origin 0.01,0.01
+set size 0.965,0.97
+set xrange [0:1285256]
+set yrange [234536:489016288]
+plot "TestSize.dat" title '20140101_XXY' with linespoints linestyle 1
